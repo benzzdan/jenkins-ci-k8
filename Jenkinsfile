@@ -30,7 +30,7 @@ podTemplate(
 ) 
 
 {
-   node('mypod') {
+   node('myJenkinsCI') {
 //         def commitId
 //         stage ('Extract') {
 //             checkout scm
