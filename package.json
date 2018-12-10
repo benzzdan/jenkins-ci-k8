@@ -1,0 +1,25 @@
+{
+    "name": "jenkins-ci-k8",
+    "version": "1.0.0",
+    "description": "A CD/CI pipeline Jenkins on top of Kubernetes",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benzzdan/jenkins-ci-k8.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/benzzdan/jenkins-ci-k8/issues"
+    },
+    "homepage": "https://github.com/benzzdan/jenkins-ci-k8#readme",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "pug": "^2.0.3"
+    }
+}
