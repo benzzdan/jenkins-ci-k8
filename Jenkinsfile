@@ -29,8 +29,8 @@ podTemplate(
     ]
 ) 
 
-// {
-//     node('mypod') {
+{
+   node('mypod') {
 //         def commitId
 //         stage ('Extract') {
 //             checkout scm
@@ -56,5 +56,5 @@ podTemplate(
 //                 sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} hello hello"
 //             }
 //         }
-//     }
-// }
+     }
+ }
