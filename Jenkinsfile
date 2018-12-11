@@ -47,7 +47,7 @@ podTemplate(
             container('docker') {
                 sh 'docker login -u wlobeos -p bd948155'
                 sh "docker build -t wlobeos:${commitId} ."
-                sh "docker push wlobeos:${commitId}"
+                sh "docker push wlobeos:${commitId}" 
             }
         }
 
