@@ -47,7 +47,7 @@ podTemplate(
             container('docker') {
                 sh 'docker login -u wlobeos -p bd948155'
                 sh "docker build -t nodehello-${commitId} ."
-                sh "docker tag nodehello-${commitId} wlobeos/nodehello:-${commitId} ."
+                sh "docker tag nodehello-${commitId} wlobeos/nodehello:-${commitId}"
                 sh "docker push wlobeos/nodehello:-${commitId}" 
             }
         }
