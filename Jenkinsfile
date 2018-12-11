@@ -37,9 +37,18 @@ podTemplate(
             commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
         }
         stage ('Build') {
+            //TODO: Figure out more steps for building a more complex nodejs app
             container ('node') {
                 sh 'npm install'
             }
         }
+        def repository
+        stage ('Docker') {
+            container('docker') {
+                sh "docker build -t wlobeos:${commitId} ."
+                sh "docker push wlobeos:${commitId}"
+            }
+        }
+
     }
 }
