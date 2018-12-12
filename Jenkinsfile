@@ -45,7 +45,7 @@ podTemplate(
         def repository
         stage ('Docker') {
             container('docker') {
-                sh 'docker login -u wlobeos -p bd948155' //FIX THIS TO SECURE
+                sh "docker login -u wlobeos -p bd948155"
                 sh "docker build -t wlobeos/nodehello-v2:${{commitId}} ."
                 sh "docker push wlobeos/nodehello-v2:${commitId}" 
             }
