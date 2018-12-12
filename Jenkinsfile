@@ -33,7 +33,7 @@ podTemplate(
     node('mypod') {
         def commitId
         stage ('Extract') {
-            checkout scm
+            checkout scm //clones the repo
             commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
         }
         stage ('Build') {
@@ -45,10 +45,9 @@ podTemplate(
         def repository
         stage ('Docker') {
             container('docker') {
-                sh 'docker login -u wlobeos -p bd948155'
-                sh "docker build -t nodehello-${commitId} ."
-                sh "docker tag nodehello-${commitId} wlobeos/nodehello-${commitId}:latest"
-                sh "docker push wlobeos/nodehello-${commitId}:latest" 
+                sh 'docker login -u wlobeos -p bd948155' //FIX THIS TO SECURE
+                sh "docker build -t wlobeos/nodehello-v2:${{commitId}} ."
+                sh "docker push wlobeos/nodehello-v2:${commitId}" 
             }
         }
 
