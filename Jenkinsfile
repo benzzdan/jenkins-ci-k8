@@ -54,7 +54,7 @@ podTemplate(
          stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
-                sh "/helm upgrade --install --wait --set image.repository=wlobeos/nodehello-v2,image.tag=${commitId} nodehello /home/opc/helmCharts/nodehello"
+                sh "/helm upgrade --install --wait --set image.repository=wlobeos/nodehello-v2,image.tag=${commitId} nodehello nodehello"
             }
         }
 
